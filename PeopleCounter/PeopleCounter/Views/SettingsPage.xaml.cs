@@ -26,7 +26,8 @@ namespace PeopleCounter.Views
 		private void Picker_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			svm.Strenght = ((Settings.VibrationStrenghtEnum)(sender as Picker).SelectedItem);
-			Vibration.Vibrate((int)svm.Strenght);
+			if(Settings.Strenght > 0)
+				Vibration.Vibrate((int)svm.Strenght);
 		}
 
 		private async void Button_Clicked(object sender, System.EventArgs e)

@@ -1,7 +1,5 @@
-﻿using System;
-using Xamarin.Essentials;
+﻿using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace PeopleCounter
 {
@@ -10,8 +8,9 @@ namespace PeopleCounter
 		public App()
 		{
 			InitializeComponent();
-			if(!DesignMode.IsDesignModeEnabled) DeviceDisplay.KeepScreenOn = Preferences.Get("KeepDisplayOn", true);
-			MainPage = new Views.MasterDetail.MainPage();
+			DeviceDisplay.KeepScreenOn = Preferences.Get("KeepDisplayOn", true);
+			//TODO Change back to MainPage after implementation is done.
+			MainPage = new NavigationPage(new PeopleCounter.Views.CounterPage());
 		}
 
 		protected override void OnStart()

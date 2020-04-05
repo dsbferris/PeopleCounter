@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace PeopleCounter.Views.MasterDetail
+namespace PeopleCounter.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SplashPage : ContentPage
+	public partial class MainPage : ContentPage
 	{
-		public SplashPage()
+		public MainPage()
 		{
 			InitializeComponent();
 		}

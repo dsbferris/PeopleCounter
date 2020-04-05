@@ -14,12 +14,14 @@ namespace PeopleCounter.Models
 		private int plus;
 		private int minus;
 		private Color lastclick;
+		private string name;
 
 		public int Max { get { return max; } set { max = value; OnPropertyChanged("Max"); } }
 		public int Min { get { return min; } set { min = value; OnPropertyChanged("Min"); } }
 		public int Plus { get { return plus; } set { plus = value; OnPropertyChanged("Plus"); OnPropertyChanged("Current"); } }
 		public int Minus { get { return minus; } set { minus = value; OnPropertyChanged("Minus"); OnPropertyChanged("Current"); } }
 		public int Current => Plus - Minus;
+		public string Name { get { return name; } set { name = value; OnPropertyChanged("Name"); } }
 
 		public Color LastClick { get { return lastclick; } set { lastclick = value; OnPropertyChanged("LastClick"); } }
 

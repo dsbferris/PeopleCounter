@@ -14,6 +14,7 @@ namespace PeopleCounter.ViewModels
 
 		public CounterVM()
 		{
+			//TODO try load counter from file.
 			Counter = new Counter();
 
 			Increment = new Command(() =>
