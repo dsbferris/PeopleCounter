@@ -41,9 +41,9 @@
                 <Label Text="{Binding Counter.Minus}"   FontSize="Large" Grid.Column="3" Grid.Row="1" TextColor="Red" HorizontalTextAlignment="Center" />
             </Grid>
 
-            <Label Text="{Binding Counter.Current}" x:Name="Number" TextColor="Black" FontSize="Header" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-            <Button Text="+" Clicked="Button_Clicked" FontSize="Header" TextColor="Green"/>
-            <Button Text="-" Clicked="Button_Clicked" FontSize="Header" TextColor="Red" />
+            <Label Text="{Binding Counter.Current}" x:Name="Number" TextColor="{Binding Counter.LastClick}" FontSize="Header" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Button Text="+" FontSize="Header" TextColor="Green" Command="{Binding Increment}"/>
+            <Button Text="-" FontSize="Header" TextColor="Red" Command="{Binding Decrement}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
