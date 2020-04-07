@@ -14,9 +14,9 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Edit" x:Name="Edit" Clicked="Edit_Clicked" Grid.Column="0" />
-                <Button Text="Reset" x:Name="Reset" Clicked="Reset_Clicked" Grid.Column="1" />
-                <Button Text="Settings" x:Name="Settings" Clicked="Settings_Clicked" Grid.Column="2" />
+                <Button Text="Edit" Clicked="Edit_Clicked" Grid.Column="0" />
+                <Button Text="Reset" Clicked="Reset_Clicked" Grid.Column="1" />
+                <Button Text="Settings" Clicked="Settings_Clicked" Grid.Column="2" />
             </Grid>
             <Grid HorizontalOptions="CenterAndExpand">
                 <Grid.ColumnDefinitions>
@@ -35,15 +35,15 @@
                 <Label Text="MIN"   FontSize="Large" Grid.Column="2" Grid.Row="0" HorizontalTextAlignment="Center"/>
                 <Label Text="OUT"   FontSize="Large" Grid.Column="3" Grid.Row="0" TextColor="Red" HorizontalTextAlignment="Center" />
 
-                <Label Text="{Binding Counter.Plus}"    FontSize="Large" Grid.Column="0" Grid.Row="1" TextColor="Green" HorizontalTextAlignment="Center" />
-                <Label Text="{Binding Counter.Max}"     FontSize="Large" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center" />
-                <Label Text="{Binding Counter.Min}"     FontSize="Large" Grid.Column="2" Grid.Row="1" HorizontalTextAlignment="Center" />
-                <Label Text="{Binding Counter.Minus}"   FontSize="Large" Grid.Column="3" Grid.Row="1" TextColor="Red" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding Plus}"    FontSize="Large" Grid.Column="0" Grid.Row="1" TextColor="Green" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding Max}"     FontSize="Large" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding Min}"     FontSize="Large" Grid.Column="2" Grid.Row="1" HorizontalTextAlignment="Center" />
+                <Label Text="{Binding Minus}"   FontSize="Large" Grid.Column="3" Grid.Row="1" TextColor="Red" HorizontalTextAlignment="Center" />
             </Grid>
 
-            <Label Text="{Binding Counter.Current}" x:Name="Number" TextColor="{Binding Counter.LastClick}" FontSize="Header" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-            <Button Text="+" FontSize="Header" TextColor="Green" Command="{Binding Increment}"/>
-            <Button Text="-" FontSize="Header" TextColor="Red" Command="{Binding Decrement}"/>
+            <Label Text="{Binding Current}" x:Name="Number" TextColor="{Binding LastClick}" FontSize="Header" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Button Text="+" FontSize="Header" TextColor="Green" Command="{Binding Increment}" CommandParameter="1" Clicked="Button_Clicked"/>
+            <Button Text="-" FontSize="Header" TextColor="Red" Command="{Binding Decrement}" CommandParameter="1" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

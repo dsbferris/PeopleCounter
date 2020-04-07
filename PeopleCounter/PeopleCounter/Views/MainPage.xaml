@@ -4,28 +4,20 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Title="People Counter"
              x:Class="PeopleCounter.Views.MainPage">
-    <ContentPage.Content>
-        <StackLayout Margin="20">
-            <Label Text="Welcome to People Counter!" TextColor="Black" FontSize="Title" HorizontalOptions="CenterAndExpand" />
-            <ListView x:Name="listview">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                </Grid.ColumnDefinitions>
-                                
-                                <Label Text="{Binding Name}" Grid.Column="0"/>
-                                
-                                
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
-    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+                     Clicked="OnCounterAddedClicked" />
+    </ContentPage.ToolbarItems>
+    <ListView x:Name="listView"
+              Margin="20"
+              ItemSelected="OnListViewItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Name}"
+                          Detail="{Binding Date}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 </ContentPage>
